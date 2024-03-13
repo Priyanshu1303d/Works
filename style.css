@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Freight big pro";
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+#main{
+    background-color: #000;
+}
+
+#loader {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99;
+    /* display: none; */
+
+}
+
+#loader video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+
+#yellow1 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #F5E41B;
+    z-index: 8;
+}
+
+#yellow2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #F5E41B;
+    z-index: 7;
+}
+
+#loader h1 {
+    font-size: 6.9vw;
+    line-height: 5.5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+    position: relative;
+    z-index: 9;
+}
+
+#nav {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 30px 50px;
+}
+
+#nav svg path {
+    fill: #000;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #F5E41B;
+}
+
+#page1 h1 {
+    font-size: 6.9vw;
+    line-height: 5.5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.elem{
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.elem .blur{
+    position: absolute;
+    width: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right, #f5e31bdf,#F5E41B,#f5e31be5);
+    box-shadow: 10px 0 20px 50px #F5E41B,-10px 0 20px 50px #F5E41B;
+    height: 100%;
+    z-index: 8;
+
+}
+
+.elem h2{
+    font-size: 6.8vw;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    z-index: 9;
+    line-height: 5vw;
+}
+
+.elem .moving{
+    background-color: #F5E41B;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-45%) scaleY(0);
+    padding: 9px 0;
+    transition: all ease 0.3s;
+
+
+}
+
+.elem .moving .moving-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.elem .moving .moving-in h5{
+    color: black;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Gilroy";
+    transition: all ease 0.3s;
+    text-transform: uppercase;
+    margin-right:35px;
+    opacity: 0;
+    transition-delay: 0.2s;
+
+}
+
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }    
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.elem:hover .moving{
+    transform: translate(0,-45%) scaleY(1);
+}
+
+.elem:hover .moving h5{
+    opacity: 1;
+}
+
+.elem:hover h2{
+    font-style: italic;
+    color: #000;
+}
+
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+
+}
+
+.img-container{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+ 
+}
+
+.img-div{
+    height: 40vw;
+    width: 30vw;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+
+}
+
+.img-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+
+}
+
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #00000022;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    transition: all ease 0.5s;
+    z-index: 9;
+}
+
+.overlay p{
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 2.5vw;
+    opacity: 0;
+    transition: all ease 0.5s;
+
+}
+
+
+.img-div:hover .overlay{ 
+    background-color: #000000;
+}
+.img-div:hover .overlay p{ 
+    opacity: 1;
+}
+
+.img-div:hover img{
+    scale: 1.1;
+}
